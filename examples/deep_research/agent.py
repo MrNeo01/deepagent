@@ -9,6 +9,9 @@ from datetime import datetime
 from langchain.chat_models import init_chat_model
 from langchain_google_genai import ChatGoogleGenerativeAI
 from deepagents import create_deep_agent
+from dotenv import load_dotenv
+# Load environment variables (e.g., API keys)
+load_dotenv()   
 
 from research_agent.prompts import (
     RESEARCHER_INSTRUCTIONS,

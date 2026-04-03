@@ -9,7 +9,9 @@ from langchain_core.tools import InjectedToolArg, tool
 from markdownify import markdownify
 from tavily import TavilyClient
 from typing_extensions import Annotated, Literal
-
+from dotenv import load_dotenv
+# Load environment variables (e.g., API keys)
+load_dotenv()   
 tavily_client = TavilyClient()
 
 
