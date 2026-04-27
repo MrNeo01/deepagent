@@ -47,7 +47,7 @@ jobs:
           echo "match=$( [ "$SDK_VERSION" = "$CLI_SDK_PIN" ] && echo true || echo false )" >> "$GITHUB_OUTPUT"
 
       - name: Manage PR comment
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         env:
           SDK_VERSION: ${{ steps.check.outputs.sdk_version }}
           CLI_PIN: ${{ steps.check.outputs.cli_pin }}
