@@ -102,7 +102,7 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: "📋 Checkout Code"
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: "🐍 Compute eval matrix"
         id: set-matrix
@@ -140,7 +140,7 @@ jobs:
       FIREWORKS_API_KEY: ${{ secrets.FIREWORKS_API_KEY }}
     steps:
       - name: "📋 Checkout Code"
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: "🐍 Set up Python + UV"
         uses: "./.github/actions/uv_setup"
@@ -170,7 +170,7 @@ jobs:
     if: always()
     steps:
       - name: "📋 Checkout Code"
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: "📥 Download eval artifacts"
         uses: actions/download-artifact@v8

@@ -24,7 +24,7 @@ jobs:
       cli-release: ${{ steps.check-cli-release.outputs.is-release }}
       pr: ${{ steps.release.outputs.pr }}
     steps:
-      - uses: googleapis/release-please-action@v4
+      - uses: googleapis/release-please-action@v5
         id: release
         with:
           config-file: release-please-config.json
@@ -32,7 +32,7 @@ jobs:
 
       # Detect CLI release by checking if this commit updated the CLI's CHANGELOG.md
       # release-please ALWAYS updates CHANGELOG.md when merging a release PR
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 2
 
@@ -57,7 +57,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout release branch
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: ${{ fromJson(needs.release-please.outputs.pr).headBranchName }}
 
